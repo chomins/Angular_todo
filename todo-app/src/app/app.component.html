@@ -1,0 +1,35 @@
+<h1>{{ title }}</h1>
+
+<div>
+<input type="text" #newTodo />
+<button (click)="addTodo(newTodo.value); newTodo.value=''">ADD</button>
+</div>
+<div>
+<table style="text-align: center; border: solid black 1px;">
+  <tr style="text-align: center; border: solid black 1px;">
+    <td >
+      할거
+    </td>
+    <td>
+      우선순위
+    </td>
+    <td>
+      했는지?
+    </td>
+  </tr>
+  <tr style="text-align: center; border: solid black 1px;" *ngFor="let todo of todos">
+    <td>
+      {{todo.label}}
+    </td>
+    <td>
+      {{todo.priarty}}
+    </td>
+    <td>
+      {{todo.done}}    
+    </td>
+    <td>
+      <button (click)="deleteTodo(todo)">delete</button>
+    </td>
+  </tr>
+</table>
+</div>
